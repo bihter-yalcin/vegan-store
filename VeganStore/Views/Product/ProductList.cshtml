@@ -1,0 +1,42 @@
+﻿@model IProductRepository
+@{ ViewData["Title"] = "ProductList"; }
+
+
+<p class="button">
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="FoodCategory">Food</a>
+
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="MakeUpCategory">Make Up</a>
+
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="SkincareCategory">Skincare</a>
+
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="FragranceCategory">Fragrance</a>
+
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="HairCategory">Hair</a>
+
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="BathAndBodyCategory">Bath and Body</a>
+
+    <a class="btn btn-primary"
+       asp-controller="Product"
+       asp-action="ToolsAndBrushesCategory">Tools and Brushes</a>
+
+</p>
+
+
+
+@foreach (var product in Model.ProductList)
+{
+<partial name="_ProductCard" model="product" />
+}
+

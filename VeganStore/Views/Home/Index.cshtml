@@ -1,0 +1,16 @@
+﻿@model IProductRepository
+
+@{
+    Layout = "_Layout";
+}
+<partial name="_Carousel" />
+
+<h2>Popular Products</h2>
+
+@foreach (var popular in @Model.PopularProducts)
+{
+
+    <partial name="_ProductCard" model="popular" />
+}
+
+

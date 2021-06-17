@@ -1,0 +1,10 @@
+﻿
+<h2>@Model</h2>
+
+
+<h2>Search Result</h2>
+
+@foreach (var product in Model.GetProductByProductName())
+{
+<partial name="_ProductCard" model="product" />
+}

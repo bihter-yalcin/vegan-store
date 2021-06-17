@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+ 
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta description="test" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/lib/jquery/jquery.js"></script>
+
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+    <link href="~/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                 
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Product" asp-action="ProductList">Products</a></li>
+                        <li><a asp-controller="Comment" asp-action="Add">Add Comment</a></li>
+                        <li><a asp-controller="AboutUs" asp-action="AboutUs">About Us</a></li>
+                        
+
+
+                    </ul>
+
+                    <div class="navbar-form navbar-right">
+                        <form asp-controller="SearchResult" asp-action="Search" method="get">
+                            <input name="Search" id="Search" placeholder="Product Name" />
+                            <input type="submit" class="btn btn-search" value="Search" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-3">
+                <p class="lead">
+                    <img class="img-responsive" alt="Vegan Store'" src="~/Images/logo.png" style="width:200px;height:200px;" />
+                </p>
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @RenderSection("Scripts", required: false)
+<footer class="bg-white">
+    <div class="container py-5">
+        <div class="row py-4">
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <p class="font-italic text-muted">Welcome to Vegan Product Store</p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Categories</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a asp-controller="Product" asp-action="FoodCategory" class="text-muted">Food</a></li>
+                    <li class="mb-2"><a asp-controller="Product" asp-action="MakeUpCategory" class="text-muted">MakeUp</a></li>
+                    <li class="mb-2"><a asp-controller="Product" asp-action="SkincareCategory" class="text-muted">Skincare</a></li>
+                    <li class="mb-2"><a asp-controller="Product" asp-action="FragranceCategory" class="text-muted">Fragrance</a></li>
+                    <li class="mb-2"><a asp-controller="Product" asp-action="HairCategory" class="text-muted">Hair</a></li>
+                    <li class="mb-2"><a asp-controller="Product" asp-action="BathAndBodyCategory" class="text-muted">Bath and Body</a></li>
+                    <li class="mb-2"><a asp-controller="Product" asp-action="ToolsAndBrushesCategory" class="text-muted">Tools and Brushes</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Contact Us</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="https://www.facebook.com/" class="text-muted">Facebook</a></li>
+                    <li class="mb-2"><a href="https://www.twitter.com/" class="text-muted">Twitter</a></li>
+                    <li class="mb-2"><a href="mailto:VeganProductStore@gmail.com" class="text-muted">Mail</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Prepared By</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="mailto:bihter.yalcin@boun.edu.tr" class="text-muted">Bihter Yalçın</a></li>
+                    <li class="mb-2"><a href="mailto:bihter.yalcin@boun.edu.tr" class="text-muted">Sena Zeynep Yıldız</a></li>
+                    <li class="mb-2"><a href="mailto:simge.senturk@boun.edu.tr" class="text-muted">Simge Şentürk</a></li>
+                    <li class="mb-2"><a href="mailto:nimet.surmeli@boun.edu.tr" class="text-muted">Nimet Sürmeli</a></li>
+                    <li class="mb-2"><a href="mailto:sumeyra.yildiz@boun.edu.tr" class="text-muted">Sümeyra Yıldız</a></li>
+                    <li class="mb-2"><a href="mailto:mehmet.alkan1@boun.edu.tr" class="text-muted">Emre Alkan</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+        <div class="container text-center">
+            <img src="~/Images/logo.png" alt="" width="50" class="mb-3">
+            <p class="text-muted mb-0 py-2">&copy; @DateTime.Now.Year - Vegan Product Store</p>
+            <p class="text-muted mb-0 py-2">All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

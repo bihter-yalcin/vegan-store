@@ -1,0 +1,13 @@
+﻿@model IProductRepository
+@{
+    ViewData["Title"] = "BathandBodyCategory";
+}
+
+<h2>Bath and Body</h2>
+
+@foreach (var product in Model.GetCategoryProducts(6))
+{
+    <partial name="_ProductCard" model="product" />
+
+}
+
